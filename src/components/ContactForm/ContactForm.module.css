@@ -1,0 +1,26 @@
+.inputField {
+  display: block;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px 0;
+  margin: 0 auto;
+}
+
+.submitBtn {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 20px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
