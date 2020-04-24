@@ -49,9 +49,11 @@ class App extends Component {
   };
 
   handleRemove = id => {
-    this.setState(state => ({
-      contacts: state.contacts.filter(contact => contact.id !== id),
-    }));
+    this.setState(state => {
+      const contacts = state.contacts.filter(contact => contact.id !== id);
+      const filter = contacts.length > 1 ? state.filter : '';
+      return { contacts, filter };
+    });
   };
 
   applyFilter() {
@@ -60,14 +62,16 @@ class App extends Component {
 
   render() {
     const visibleContacts = this.applyFilter();
+    const { contacts } = this.state;
+
     return (
       <div className={styles.container}>
         <h1>Phonebook</h1>
         <ContactForm saveContact={this.saveContact} />
 
         <h2>Contacts</h2>
-        <Filter filter={this.state.filter} handleFilterChange={this.handleFilterChange} />
-        <ContactList contacts={visibleContacts} handleRemove={this.handleRemove} />
+        {contacts.length > 1 && <Filter filter={this.state.filter} handleFilterChange={this.handleFilterChange} />}
+        {visibleContacts.length > 0 && <ContactList contacts={visibleContacts} handleRemove={this.handleRemove} />}
       </div>
     );
   }

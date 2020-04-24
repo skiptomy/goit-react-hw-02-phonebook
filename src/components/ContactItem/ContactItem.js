@@ -3,15 +3,13 @@ import propTypes from 'prop-types';
 import styles from './ContactItem.module.css';
 
 const ContactItem = ({ contact, handleRemove }) => (
-  <div>
-    <div>
-      <span className={styles.name}>{contact.name}: </span>
-      <span className={styles.number}>{contact.number}</span>
-      <button className={styles.removeBtn} type="button" onClick={handleRemove}>
-        Delete
-      </button>
-    </div>
-  </div>
+  <>
+    <span className={styles.name}>{contact.name}: </span>
+    <span className={styles.number}>{contact.number}</span>
+    <button className={styles.removeBtn} type="button" onClick={handleRemove}>
+      Delete
+    </button>
+  </>
 );
 
 ContactItem.propTypes = {

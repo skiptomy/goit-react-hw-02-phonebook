@@ -35,18 +35,16 @@ class ContactForm extends Component {
   render() {
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
-        <div>
-          <label>
-            Name
-            <input className={styles.inputField} name="name" value={this.state.name} onChange={this.handleChange} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Number
-            <input className={styles.inputField} name="number" value={this.state.number} onChange={this.handleChange} />
-          </label>
-        </div>
+        <label>
+          Name
+          <input className={styles.inputField} name="name" value={this.state.name} onChange={this.handleChange} />
+        </label>
+
+        <label>
+          Number
+          <input className={styles.inputField} name="number" value={this.state.number} onChange={this.handleChange} />
+        </label>
+
         <button className={styles.submitBtn} type="submit">
           Add Contact
         </button>
